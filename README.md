@@ -51,7 +51,7 @@ T.ex. en lista på projekt som mappas ut - den borde kunna vara en återanvändb
 - minst 5 Unit/komponent-tester ()
 - minst 3 Integrations-tester ()
 - 1 E2E-test som testar hela applikationen från start till slut
-  (Navigera mellan sidor, skapa projekt, tasks, starta tidtagning, stoppa tidtagning)()
+  (Navigera mellan sidor, skapa projekt, tasks, starta tidtagning, stoppa tidtagning) ()
 
 ## För att uppnå Godkänt är kraven att:
 - Du uppfyller "Tester för K1" ()
