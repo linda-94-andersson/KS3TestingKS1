@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: "./__test__/setup.ts",
+    setupFiles: "./__test__/setup.js",
     deps: {
       fallbackCJS: true,
     },
