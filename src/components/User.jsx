@@ -19,11 +19,11 @@ import { RiDeleteBack2Line } from "react-icons/ri";
 function User() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // const { userValue, getUserData } = useUser();
-  // const { dispatch } = useUserDispatch();
-  // const { getProjectData } = useProject();
-  // const { getTaskData } = useTask();
-  // const { getTimeLogData } = useTimeLog();
+  const { userValue, getUserData } = useUser();
+  const { dispatch } = useUserDispatch();
+  const { getProjectData } = useProject();
+  const { getTaskData } = useTask();
+  const { getTimeLogData } = useTimeLog();
 
   const handleDelete = async (id) => {
     const data = await deleteUser(id);
@@ -40,7 +40,7 @@ function User() {
   return (
     <>
       <Container>
-        {/* {userValue.users ? (
+        {userValue.users ? (
           userValue.users.map((u) => (
             <Container key={u.id}>
               <Box>
@@ -59,7 +59,7 @@ function User() {
           <Box>
             <Heading>No users found</Heading>
           </Box>
-        )} */}
+        )}
         <br />
         <Button colorScheme="blue" onClick={onOpen}>
           Add new user
