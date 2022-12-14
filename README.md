@@ -48,7 +48,7 @@ T.ex. en lista på projekt som mappas ut - den borde kunna vara en återanvändb
   (Från start till slut, end to end)
 
 ## Tester för K1:
-- minst 5 Unit/komponent-tester ()
+- minst 5 Unit/komponent-tester (X)
 - minst 3 Integrations-tester ()
 - 1 E2E-test som testar hela applikationen från start till slut
   (Navigera mellan sidor, skapa projekt, tasks, starta tidtagning, stoppa tidtagning) ()
