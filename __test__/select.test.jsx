@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 import { Select } from "@chakra-ui/react";
 
 describe("Test chakra select", () => {
-  it("should correctly set default option", () => {
+  it("Should correctly set default option", () => {
     render(
       <Select>
         <option>Select a ...</option>
@@ -19,7 +19,7 @@ describe("Test chakra select", () => {
     );
     screen.debug();
   });
-  it("should display the correct number of options", () => {
+  it("Should display the correct number of options", () => {
     render(
       <Select>
         <option>Select a ...</option>
