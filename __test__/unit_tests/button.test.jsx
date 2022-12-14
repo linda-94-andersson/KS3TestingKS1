@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import { screen, fireEvent } from "@testing-library/react";
-import { render } from "./test-utils";
+import { render } from "../test-utils";
 import "@testing-library/jest-dom";
 import { Button } from "@chakra-ui/react";
 
