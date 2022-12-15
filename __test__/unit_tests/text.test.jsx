@@ -11,6 +11,6 @@ describe("Test chakra text", () => {
     render(<Text>{textText}</Text>);
     const textScreen = screen.getByText(textText);
     screen.debug();
-    expect(textScreen).toBeVisible();
+    expect(textScreen).toBeInTheDocument();
   });
 });

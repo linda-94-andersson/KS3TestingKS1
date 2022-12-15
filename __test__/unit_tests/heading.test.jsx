@@ -11,6 +11,6 @@ describe("Test chakra heading", () => {
     render(<Heading>{headingText}</Heading>);
     const headingScreen = screen.getByText(headingText);
     screen.debug();
-    expect(headingScreen).toBeVisible();
+    expect(headingScreen).toBeInTheDocument();
   });
 });
