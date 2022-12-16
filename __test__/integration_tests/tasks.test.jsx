@@ -10,11 +10,13 @@ import {
   waitFor,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { customRender } from "../test-utils";
 import "@testing-library/jest-dom";
 import Overview from "../../src/routes/Overview";
 import { setupServer } from "msw/node";
 import { buildHandlers } from "../../__mock__/handlers";
+import AddTask from "../../src/components/AddTask";
 
 const config = {
   baseUrl: `http://${import.meta.env.VITE_URL_KEY}`,
@@ -36,6 +38,16 @@ describe("User intergration", () => {
     const clickTab = fireEvent.click(userTabSelect);
     expect(clickTab).not.toBeFalsy();
     await waitFor(() => screen.getByText(config.nameTask));
+    screen.debug();
+  });
+
+  it("Task can be created", async () => {
+    customRender(<AddTask isOpen={true} />);
+    const inputEl = screen.getByPlaceholderText("Task name");
+    await userEvent.type(inputEl, config.nameTask);
+    const addButton = screen.getByText("Add task");
+    await userEvent.click(addButton);
+    expect(screen.queryByText(config.nameTask)).toBeDefined();
     screen.debug();
   });
 
