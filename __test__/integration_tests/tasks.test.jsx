@@ -31,11 +31,11 @@ const server = setupServer(...buildHandlers(config));
 
 beforeAll(() => server.listen());
 
-describe("User intergration", () => {
+describe("Task intergration", () => {
   it("Tasks component render when Tasks tab is clicked", async () => {
     customRender(<Overview />);
-    const userTabSelect = screen.getByRole("tab", { name: "Tasks" });
-    const clickTab = fireEvent.click(userTabSelect);
+    const taskTabSelect = screen.getByRole("tab", { name: "Tasks" });
+    const clickTab = fireEvent.click(taskTabSelect);
     expect(clickTab).not.toBeFalsy();
     await waitFor(() => screen.getByText(config.nameTask));
     screen.debug();
@@ -53,8 +53,8 @@ describe("User intergration", () => {
 
   it("Tasks can be deleted", async () => {
     customRender(<Overview />);
-    const userTabSelect = screen.getByRole("tab", { name: "Tasks" });
-    const clickTab = fireEvent.click(userTabSelect);
+    const taskTabSelect = screen.getByRole("tab", { name: "Tasks" });
+    const clickTab = fireEvent.click(taskTabSelect);
     expect(clickTab).not.toBeFalsy();
     let taskName = await waitFor(() => screen.getByText(config.nameTask));
     const deleteButton = screen.getByRole("button", { name: "delButton" });
