@@ -10,19 +10,18 @@ import "@testing-library/jest-dom";
 import Overview from "../../src/routes/Overview";
 import { customRender } from "../test-utils";
 import AddUser from "../../src/components/AddUser";
-
 import { setupServer } from "msw/node";
 import { buildHandlers } from "../../__mock__/handlers";
 
 const config = {
   baseUrl: `http://${import.meta.env.VITE_URL_KEY}`,
-  id: "A1",
-  name: "Linda",
+  idUser: "A1",
+  nameUser: "Linda",
 };
 
-beforeAll(() => server.listen());
-
 const server = setupServer(...buildHandlers(config));
+
+beforeAll(() => server.listen());
 
 describe("User intergration", () => {
   it("Users component render when Users tab is clicked", async () => {
@@ -30,7 +29,7 @@ describe("User intergration", () => {
     const userTabSelect = screen.getByRole("tab", { name: "Users" });
     const clickTab = fireEvent.click(userTabSelect);
     expect(clickTab).not.toBeFalsy();
-    await waitFor(() => screen.getByText(config.name));
+    await waitFor(() => screen.getByText(config.nameUser));
     screen.debug();
   });
 
