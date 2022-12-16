@@ -1,4 +1,3 @@
-import { color } from "@chakra-ui/react";
 import { rest } from "msw";
 
 export const buildHandlers = (config) => {
