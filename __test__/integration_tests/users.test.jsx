@@ -11,13 +11,26 @@ import Overview from "../../src/routes/Overview";
 import { customRender } from "../test-utils";
 import AddUser from "../../src/components/AddUser";
 
+import { setupServer } from "msw/node";
+import { buildHandlers } from "../../__mock__/handlers";
+
+const config = {
+  baseUrl: `http://${import.meta.env.VITE_URL_KEY}`,
+  id: "A1",
+  name: "Linda",
+};
+
+beforeAll(() => server.listen());
+
+const server = setupServer(...buildHandlers(config));
+
 describe("User intergration", () => {
   it("Users component render when Users tab is clicked", async () => {
     customRender(<Overview />);
     const userTabSelect = screen.getByRole("tab", { name: "Users" });
     const clickTab = fireEvent.click(userTabSelect);
     expect(clickTab).not.toBeFalsy();
-    await waitFor(() => screen.getByText("Linda"));
+    await waitFor(() => screen.getByText(config.name));
     screen.debug();
   });
 
