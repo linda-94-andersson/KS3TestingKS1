@@ -20,7 +20,6 @@
   ```
 
 ## Skills used for this project
-* WORK IN PROGRESS
 * Vitest
 * Playwright
 * React-testing-lib
