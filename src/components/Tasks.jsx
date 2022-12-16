@@ -58,7 +58,11 @@ function Tasks() {
                       </Heading>
                     </Box>
                   ))}
-                <Button variant="link" onClick={() => handleDelete(t.id)}>
+                <Button
+                  aria-label="delButton"
+                  variant="link"
+                  onClick={() => handleDelete(t.id)}
+                >
                   <Icon as={RiDeleteBack2Line} w={25} h={25} />
                 </Button>
                 <Divider />

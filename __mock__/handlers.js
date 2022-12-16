@@ -12,10 +12,21 @@ export const buildHandlers = (config) => {
     nameTask,
     userId,
     projectId,
+    createdDate,
     startTime,
     endTime,
     taskId,
   } = config;
+
+  let taskList = [
+    {
+      id: idTask,
+      name: nameTask,
+      createdDate: createdDate,
+      projectId: projectId,
+    },
+  ];
+
   return [
     rest.get(baseUrl + "/users", (req, res, ctx) => {
       return res(
@@ -49,15 +60,12 @@ export const buildHandlers = (config) => {
       );
     }),
     rest.get(baseUrl + "/tasks", (req, res, ctx) => {
-      return res(
-        ctx.json([
-          {
-            id: idTask,
-            name: nameTask,
-            projectId: projectId,
-          },
-        ])
-      );
+      return res(ctx.json(taskList));
+    }),
+    rest.delete(baseUrl + "/tasks/:id", (req, res, ctx) => {
+      taskList = taskList.filter((task) => task.id !== req.params.id);
+      console.log("DELETE", taskList);
+      return res(ctx.status(200));
     }),
     rest.get(baseUrl + "/timelogs", (req, res, ctx) => {
       return res(
