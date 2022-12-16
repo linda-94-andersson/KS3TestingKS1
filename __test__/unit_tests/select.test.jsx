@@ -1,13 +1,13 @@
 import React from "react";
 import { describe, expect, it } from "vitest";
 import { screen } from "@testing-library/react";
-import { render } from "../test-utils";
+import { customRender } from "../test-utils";
 import "@testing-library/jest-dom";
 import { Select } from "@chakra-ui/react";
 
 describe("Test chakra select", () => {
   it("Should correctly set default option", () => {
-    render(
+    customRender(
       <Select>
         <option>Select a ...</option>
         <option>Test 1</option>
@@ -20,7 +20,7 @@ describe("Test chakra select", () => {
     screen.debug();
   });
   it("Should display the correct number of options", () => {
-    render(
+    customRender(
       <Select>
         <option>Select a ...</option>
         <option>Test 1</option>

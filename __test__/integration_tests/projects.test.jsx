@@ -5,7 +5,7 @@
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import { screen, fireEvent } from "@testing-library/react";
-import { render } from "../test-utils";
+import { customRender } from "../test-utils";
 import "@testing-library/jest-dom";
 import Overview from "../../src/routes/Overview";
 
@@ -15,7 +15,7 @@ describe("User intergration", () => {
   });
 
   it("Projects component render when Projects tab is clicked", async () => {
-    render(<Overview />);
+    customRender(<Overview />);
     const userTabSelect = screen.getByRole("tab", { name: "Projects" });
     const clickTab = fireEvent.click(userTabSelect);
     expect(clickTab).not.toBeFalsy();
