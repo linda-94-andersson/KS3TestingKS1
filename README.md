@@ -15,6 +15,9 @@
   ```
   npm run coverage
   ```
+  ```
+  npm run play-test
+  ```
 
 ## Skills used for this project
 * WORK IN PROGRESS
