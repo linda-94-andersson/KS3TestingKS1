@@ -49,7 +49,7 @@ T.ex. en lista på projekt som mappas ut - den borde kunna vara en återanvändb
 
 ## Tester för K1:
 - minst 5 Unit/komponent-tester (X)
-- minst 3 Integrations-tester ()
+- minst 3 Integrations-tester (X)
 - 1 E2E-test som testar hela applikationen från start till slut
   (Navigera mellan sidor, skapa projekt, tasks, starta tidtagning, stoppa tidtagning) ()
 
@@ -58,11 +58,11 @@ T.ex. en lista på projekt som mappas ut - den borde kunna vara en återanvändb
 
 - Du använder Jest/Vitest, RTL och Playwright för dina tester ()
 
-- Testerna går igenom (naturligtvis) ()
+- Testerna går igenom (naturligtvis) (X)
 
-- Testerna faktiskt testar något (och inte är tomma statements). ()
+- Testerna faktiskt testar något (och inte är tomma statements). (X)
 
 ## För att uppnå Väl Godkänt är kraven att:
-- Du använder Mocks för alla API-anrop som görs ()
+- Du använder Mocks för alla API-anrop som görs (X)
 
-- Har över 85% code coverage i K1 och K2 ()
+- Har över 85% code coverage i K1 och K2 (X)
