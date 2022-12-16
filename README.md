@@ -51,12 +51,12 @@ T.ex. en lista på projekt som mappas ut - den borde kunna vara en återanvändb
 - minst 5 Unit/komponent-tester (X)
 - minst 3 Integrations-tester (X)
 - 1 E2E-test som testar hela applikationen från start till slut
-  (Navigera mellan sidor, skapa projekt, tasks, starta tidtagning, stoppa tidtagning) ()
+  (Navigera mellan sidor, skapa projekt, tasks, starta tidtagning, stoppa tidtagning) (X)
 
 ## För att uppnå Godkänt är kraven att:
-- Du uppfyller "Tester för K1" ()
+- Du uppfyller "Tester för K1" (X)
 
-- Du använder Jest/Vitest, RTL och Playwright för dina tester ()
+- Du använder Jest/Vitest, RTL och Playwright för dina tester (X)
 
 - Testerna går igenom (naturligtvis) (X)
 
