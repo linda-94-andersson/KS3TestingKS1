@@ -41,10 +41,10 @@ describe("User intergration", () => {
   it("User can be created", async () => {
     customRender(<AddUser isOpen={true} />);
     const inputEl = screen.getByPlaceholderText("User name");
-    await userEvent.type(inputEl, "User 1");
+    await userEvent.type(inputEl, config.nameUser);
     const addButton = screen.getByText("Add User");
     await userEvent.click(addButton);
-    expect(screen.queryByText("User 1")).toBeDefined();
+    expect(screen.queryByText(config.nameUser)).toBeDefined();
     screen.debug();
   });
 
