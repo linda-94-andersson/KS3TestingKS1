@@ -1,15 +1,28 @@
 import { rest } from "msw";
 
 export const buildHandlers = (config) => {
-  const { baseUrl, id, name, userId, projectId, startTime, endTime, taskId } =
-    config;
+  const {
+    baseUrl,
+    idUser,
+    idProject,
+    idTask,
+    idTimelog,
+    nameUser,
+    nameProject,
+    nameTask,
+    userId,
+    projectId,
+    startTime,
+    endTime,
+    taskId,
+  } = config;
   return [
     rest.get(baseUrl + "/users", (req, res, ctx) => {
       return res(
         ctx.json([
           {
-            id: id,
-            name: name,
+            id: idUser,
+            name: nameUser,
           },
         ])
       );
@@ -18,8 +31,8 @@ export const buildHandlers = (config) => {
       return res(
         ctx.json([
           {
-            id: id,
-            name: name,
+            id: idUser,
+            name: nameUser,
           },
         ])
       );
@@ -28,8 +41,8 @@ export const buildHandlers = (config) => {
       return res(
         ctx.json([
           {
-            id: id,
-            name: name,
+            id: idProject,
+            name: nameProject,
             userId: userId,
           },
         ])
@@ -39,8 +52,8 @@ export const buildHandlers = (config) => {
       return res(
         ctx.json([
           {
-            id: id,
-            name: name,
+            id: idTask,
+            name: nameTask,
             projectId: projectId,
           },
         ])
@@ -50,7 +63,7 @@ export const buildHandlers = (config) => {
       return res(
         ctx.json([
           {
-            id: id,
+            id: idTimelog,
             startTime: startTime,
             endTime: endTime,
             taskId: taskId,
