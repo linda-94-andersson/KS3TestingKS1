@@ -47,7 +47,11 @@ function User() {
                 <Heading style={{ display: "inline", paddingRight: 25 }}>
                   {u.name}
                 </Heading>
-                <Button variant="link" onClick={() => handleDelete(u.id)}>
+                <Button
+                  aria-label="delButton"
+                  variant="link"
+                  onClick={() => handleDelete(u.id)}
+                >
                   <Icon as={RiDeleteBack2Line} w={25} h={25} />
                 </Button>
               </Box>

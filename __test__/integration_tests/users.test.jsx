@@ -4,7 +4,12 @@
 
 import React from "react";
 import { describe, expect, it } from "vitest";
-import { screen, fireEvent, waitFor } from "@testing-library/react";
+import {
+  screen,
+  fireEvent,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import Overview from "../../src/routes/Overview";
@@ -40,6 +45,19 @@ describe("User intergration", () => {
     const addButton = screen.getByText("Add User");
     await userEvent.click(addButton);
     expect(screen.queryByText("User 1")).toBeDefined();
+    screen.debug();
+  });
+
+  it("User can be deleted", async () => {
+    customRender(<Overview />);
+    const userTabSelect = screen.getByRole("tab", { name: "Users" });
+    const clickTab = fireEvent.click(userTabSelect);
+    expect(clickTab).not.toBeFalsy();
+    let userName = await waitFor(() => screen.getByText(config.nameUser));
+    const deleteButton = screen.getByRole("button", { name: "delButton" });
+    fireEvent.click(deleteButton);
+    await waitForElementToBeRemoved(() => screen.getAllByText(config.nameUser));
+    expect(userName).not.toBeInTheDocument();
     screen.debug();
   });
 });
