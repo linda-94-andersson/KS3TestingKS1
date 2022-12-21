@@ -12,11 +12,11 @@ import {
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import Overview from "../../src/routes/Overview";
-import { customRender } from "../test-utils";
-import AddUser from "../../src/components/AddUser";
+import Overview from "../../../src/routes/Overview";
+import { customRender } from "../../test-utils";
+import AddUser from "../../../src/components/AddUser";
 import { setupServer } from "msw/node";
-import { buildHandlers } from "../../__mock__/handlers";
+import { buildHandlers } from "../../../__mock__/handlers";
 
 const config = {
   baseUrl: `http://${import.meta.env.VITE_URL_KEY}`,

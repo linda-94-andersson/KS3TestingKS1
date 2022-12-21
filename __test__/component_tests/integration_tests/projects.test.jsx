@@ -11,12 +11,12 @@ import {
   waitForElementToBeRemoved,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { customRender } from "../test-utils";
+import { customRender } from "../../test-utils";
 import "@testing-library/jest-dom";
-import Overview from "../../src/routes/Overview";
+import Overview from "../../../src/routes/Overview";
 import { setupServer } from "msw/node";
-import { buildHandlers } from "../../__mock__/handlers";
-import AddProject from "../../src/components/AddProject";
+import { buildHandlers } from "../../../__mock__/handlers";
+import AddProject from "../../../src/components/AddProject";
 
 const config = {
   baseUrl: `http://${import.meta.env.VITE_URL_KEY}`,

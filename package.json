@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "coverage": "vitest run --coverage",
+    "coverage": "vitest run --coverage __test__/component_tests",
     "preview": "vite preview",
     "prepare": "husky install",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
+    "test": "npx vitest --run __test__/component_tests",
+    "test:ui": "npx vitest --run --ui __test__/component_tests",
     "play-test": "npx playwright test e2e.spec.js"
   },
   "dependencies": {

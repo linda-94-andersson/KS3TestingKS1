@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, expect, it } from "vitest";
 import { screen } from "@testing-library/react";
-import { customRender } from "../test-utils";
+import { customRender } from "../../test-utils";
 import "@testing-library/jest-dom";
 import { Select } from "@chakra-ui/react";
 

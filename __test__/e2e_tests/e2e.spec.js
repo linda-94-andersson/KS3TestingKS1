@@ -7,7 +7,6 @@ test.only("e2e for Timer-app", async ({ page }) => {
   await page.getByPlaceholder("User name").click();
   await page.getByPlaceholder("User name").fill("Test me");
   await page.getByRole("button", { name: "Add User" }).click();
-  await page.locator("div:nth-child(9) > .css-0 > .chakra-button").click();
   await page.getByRole("tab", { name: "Projects" }).click();
   await page.getByRole("button", { name: "Add new project" }).click();
   await page
@@ -16,23 +15,21 @@ test.only("e2e for Timer-app", async ({ page }) => {
   await page.getByPlaceholder("Project name").click();
   await page.getByPlaceholder("Project name").fill("Adding me");
   await page.getByRole("button", { name: "Add project" }).click();
-  await page.getByRole("button", { name: "delButton" }).nth(3).click();
   await page.getByRole("tab", { name: "Tasks" }).click();
   await page.getByRole("button", { name: "Add new Tasks" }).click();
   await page
     .locator("#projects")
-    .selectOption("daab98bb-3c49-4438-8dd6-368fee1f253b");
+    .selectOption("74efefab-952f-4f7d-b421-a1564ff7c0ab");
   await page.getByPlaceholder("Task name").click();
   await page.getByPlaceholder("Task name").fill("Adding again");
   await page.getByRole("button", { name: "Add task" }).click();
   await page.getByRole("button", { name: "Add new Tasks" }).click();
   await page
     .locator("#projects")
-    .selectOption("daab98bb-3c49-4438-8dd6-368fee1f253b");
+    .selectOption("74efefab-952f-4f7d-b421-a1564ff7c0ab");
   await page.getByPlaceholder("Task name").click();
   await page.getByPlaceholder("Task name").fill("Delete me");
   await page.getByRole("button", { name: "Add task" }).click();
-  await page.locator("div:nth-child(7) > div > .chakra-button").click();
   await page.getByRole("link").first().click();
   await page.locator(".chakra-button").first().click();
   await page.locator("button:nth-child(2)").first().click();
